@@ -15,4 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Dropdown Select Initialization Materialize
     let selects = document.querySelectorAll('select');
     M.FormSelect.init(selects)
+
+    // Collapsible Initialization Materialize
+    let collapsible = document.querySelectorAll('.collapsible');
+    M.Collapsible.init(collapsible);
+
   });
