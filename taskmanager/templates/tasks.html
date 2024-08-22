@@ -18,13 +18,16 @@
             <i class="fas fa-caret-down"></i>
             <strong>{{ task.task_name }}</strong> : {{ task.due_date.strftime("%d %B, %Y") }}
             {% if task.is_urgent == True %}
-                <i class="fas fa-exclamation-circle light-blue-text text-lighten-2"></i>
+            <i class="fas fa-exclamation-circle light-blue-text text-lighten-2"></i>
             {% endif %}
         </div>
         <div class="collapsible-body">
             <strong>{{ task.category }}</strong>
             <p>{{ task.task_description }}</p>
-            <p><a href="{{ url_for('edit_task', task_id=task.id) }}" class="btn greeb accent-4">Edit</a></p>
+            <div class="row center">
+                <p class="col s2 left"><a href="{{ url_for('edit_task', task_id=task.id) }}" class="btn greeb accent-4">Edit</a></p>
+                <p class="col s2 left"><a href="{{ url_for('delete_task', task_id=task.id) }}" class="btn red">Delete</a></p>
+            </div>
         </div>
     </li>
     {% endfor %}
